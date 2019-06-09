@@ -1,0 +1,59 @@
+<section fxLayout="column" fxFlexAlign="stretch">
+  <div fxFlexAlign="center">
+    <br><br>
+      <h2 class="mat-h1">Welcome To Floating Double | The Hub for Machine Learning APIs</h2>
+      <br><br><br>
+  </div>
+ <div class="ex1">
+  <mat-accordion>
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          NLP
+        </mat-panel-title>
+        <mat-panel-description>
+          APIs for Natural Language Processing Based applications
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+        <mat-tab label="Sentiment Analysis"> 
+          <p>Sentiment Analysis tab</p> 
+        </mat-tab>
+        <mat-tab label="Stance Detection">
+           <p>Stance detection tab</p>
+          </mat-tab>
+        <mat-tab label="Summarizer">
+           <p>Summarizer tab</p>
+          </mat-tab>
+          <mat-tab label="Tag Generator">
+            <p>Tag Generator tab</p>
+           </mat-tab>
+      </mat-tab-group>
+    </mat-expansion-panel>
+  </mat-accordion>
+</div>
+<br>
+<br>
+<div class="ex1">
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Image Analytics
+          </mat-panel-title>
+          <mat-panel-description>
+            APIs for Image analysis
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-tab-group (selectedTabChange)="executeSelectedChange($event)">
+          <mat-tab label="Sentiment Analysis"> 
+            <p>Sentiment Analysis and results</p> 
+          </mat-tab>
+            <mat-tab label="Tags and Categories Generator">
+              <p>Tags and Categorization</p>
+             </mat-tab>
+        </mat-tab-group>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</section>
