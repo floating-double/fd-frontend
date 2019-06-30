@@ -9,20 +9,24 @@ import { LayoutComponent } from './layout/layout.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
+import { SentimentAnalysisComponent } from './sentiment-analysis/sentiment-analysis.component';
+import { HttpClientModule } from  '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     LayoutComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    SentimentAnalysisComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RoutingModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
