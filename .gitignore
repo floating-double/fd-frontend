@@ -49,3 +49,4 @@ favicon.ico
 # Assets
 /src/assets
 
+package-lock.json
