@@ -18,6 +18,7 @@ export class SentimentAnalysisComponent implements OnInit {
   veryNegative: number;
   sentiment: Sentiment;
   textInput: string;
+  enableResult: boolean;
 
   constructor(private service: SentimentAnalysisService) { }
 
@@ -25,27 +26,43 @@ export class SentimentAnalysisComponent implements OnInit {
     this.textInput = "";
   }
 
-  async getSentimentAnalysis(text: Input) {
-    this.service.postInputText(text).subscribe(
+getSentimentAnalysis(text: string) {
+    this.service.postInputText(new Input(text)).subscribe(
       data => {
-        if (!(<any>data)._body) {
+        console.log(data);
+        if (!data) {
           console.log("no response from service");
         } else {
+          this.enableResult = true;
           console.log("response " + data);
-          this.sentiment = (<any>data).json();
+          this.sentiment = JSON.parse(JSON.stringify(data));
           this.sentimentScore = this.sentiment.sentimentScore;
           this.sentimentType = this.sentiment.sentimentType;
-          this.veryPositive = this.sentiment.veryPositive;
-          this.positive = this.sentiment.positive;
-          this.neutral = this.sentiment.neutral;
-          this.negative = this.sentiment.negative;
-          this.veryNegative = this.sentiment.veryNegative;
+          this.veryPositive = this.sentiment.sentimentClass.veryPositive;
+          this.positive = this.sentiment.sentimentClass.positive;
+          this.neutral = this.sentiment.sentimentClass.neutral;
+          this.negative = this.sentiment.sentimentClass.negative;
+          this.veryNegative = this.sentiment.sentimentClass.veryNegative;
         }
       },
       error => {
         console.log(error);
       }
     )
+  }
+
+  disableResult(){
+this.enableResult = false;
+  }
+
+  resetValues(){
+    this.sentimentScore = 0;
+    this.sentimentType = "";
+    this.veryPositive = 0;
+    this.positive = 0;
+    this.neutral = 0;
+    this.negative = 0;
+    this.veryNegative = 0;
   }
 
 }

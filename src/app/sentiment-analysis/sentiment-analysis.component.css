@@ -1,9 +1,32 @@
 .example-form {
-  min-width: 150px;
-  max-width: 500px;
+  min-width: 500px;
+  max-width: 600px;
   width: 100%;
 }
 
 .example-full-width {
   width: 100%;
+}
+
+#wrapper {
+  font-family: "Helvetica Neue", Roboto, sans-serif;
+}
+
+#left {
+  font-family: "Helvetica Neue", Roboto, sans-serif;
+  flex: 0 0 50%;
+}
+
+#middle {
+  font-family: "Helvetica Neue", Roboto, sans-serif;
+  flex: 1;
+  width: 1%;
+  margin: auto;
+}
+
+#right {
+  font-family: "Helvetica Neue", Roboto, sans-serif;
+  flex: 1;
+  width: 48%;
+  margin: auto;
 }

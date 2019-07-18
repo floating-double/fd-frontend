@@ -18,7 +18,17 @@ mat-tab-group p {
     padding-top: 20px;
 }
 
-div.ex1 {
-    width: 80%;
+  #wrapper {
+    display: flex;
+  }
+  
+  #left {
+    font-family: "Helvetica Neue", Roboto, sans-serif;
+    flex: 0 0 7%;
+  }
+  
+  #right {
+    flex: 1;
+    width: 90%;
     margin: auto;
   }

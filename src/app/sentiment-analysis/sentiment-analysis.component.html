@@ -5,14 +5,65 @@
 <!-- <mat-form-field class="example-full-width">
   <textarea matInput placeholder="Leave a comment"></textarea>
 </mat-form-field> -->
-<form class="example-form">
-  <!-- <mat-form-field class="example-full-width">
+<table id="wrapper">
+  <tr>
+    <td>
+      <form class="example-form">
+        <!-- <mat-form-field class="example-full-width">
     <input matInput placeholder="Favorite food" value="Sushi">
   </mat-form-field> -->
 
-  <mat-form-field class="example-full-width">
-    <textarea matInput placeholder="Enter Text for Sentiment Analysis"></textarea>
-  </mat-form-field>
-</form>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Enter Text for Sentiment Analysis" [(ngModel)]="textInput" name="textInput" (change)="disableResult()"></textarea>
 
-{{textInput}}
+
+        </mat-form-field>
+
+        <div mat-dialog-actions style="float: right">
+          <button mat-button type="button" (click)="getSentimentAnalysis(textInput)">Submit</button>
+
+        </div>
+      </form>
+    </td>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    <td>
+      <table  *ngIf="!!textInput">
+        <tr>
+          <td><font size="4">Result:</font>
+            <br>
+            <br></td>
+        </tr>
+        <tr>
+          <td><font size="6">Sentiment Score:</font></td>
+          <td><font size="6">{{sentimentScore}}</font></td>
+        </tr>
+        <tr>
+          <td><font size="6">Sentiment Type:</font><br><br></td>
+          <td><font size="6">{{sentimentType}}</font><br><br></td>
+        </tr>
+        <tr>
+            <td>Details:</td>
+          </tr>
+        <tr>
+          <td>Very Positive</td>
+          <td>{{veryPositive}}</td>
+        </tr>
+        <tr>
+          <td>Positive</td>
+          <td>{{positive}}</td>
+        </tr>
+        <tr>
+          <td>Neutral</td>
+          <td>{{neutral}}</td>
+        </tr>
+        <tr>
+          <td>Negative</td>
+          <td>{{negative}}</td>
+        </tr>
+        <tr>
+          <td>Very Negative</td>
+          <td>{{veryNegative}}</td>
+        </tr>
+      </table>
+    </td>
+</table>
