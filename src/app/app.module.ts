@@ -10,6 +10,7 @@ import {FlexLayoutModule} from '@angular/flex-layout';
 import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SentimentAnalysisComponent } from './sentiment-analysis/sentiment-analysis.component';
+import {NewsComponent} from './news/news.component';
 import { HttpClientModule } from  '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -19,7 +20,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     LayoutComponent,
     HomeComponent,
     HeaderComponent,
-    SentimentAnalysisComponent
+    SentimentAnalysisComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
